@@ -1,0 +1,307 @@
+<template>
+  <div class="page"  @swipe="toHomePage">
+    <!-- 点击跳转详情页 -->
+    <list class="list" bounces="true">
+      <list-item class="item1 justify-between" type="costom"></list-item>
+      <list-item class="item justify-between" type="costom" for="{{list}}" @click="navigateToPage($item.name)">
+        <div class="center">
+          <text class="name">{{ $item.name }}</text>
+        </div>
+      </list-item>
+      <list-item class="item1 justify-between" type="costom"></list-item>
+    </list>
+    <image class="cover" src="/common/icon/cover.png"></image>
+    <text class="time">{{ time }}</text>
+
+    <text class="title">{{ which }}</text>
+    <!--<image class="back" src="/common/icon/back.png" onclick="back"></image>-->
+  </div>
+</template>
+
+<script>
+import router from "@system.router"
+import app from "@system.app"
+const dataMap = {
+  "七年级-上": [
+    {name: "观沧海"},
+    {name: "闻王昌龄左迁龙标遥有此寄"},
+    {name: "次北固山下"},
+    {name: "天净沙・秋思"},
+    {name: "咏雪"},
+    {name: "陈太丘与友期行"},
+    {name: "《论语》十二章"},
+    {name: "诫子书"},
+    {name: "狼"},
+    {name: "穿井得一人"},
+    {name: "杞人忧天"},
+    {name: "峨眉山月歌"},
+    {name: "江南逢李龟年"},
+    {name: "行军九日思长安故园"},
+    {name: "夜上受降城闻笛"},
+    {name: "秋词（其一）"},
+    {name: "夜雨寄北"},
+    {name: "十一月四日风雨大作（其二）"},
+    {name: "潼关"}
+  ],
+  "七年级-下": [
+    {name: "孙权劝学"},
+    {name: "木兰诗"},
+    {name: "卖油翁"},
+    {name: "陋室铭"},
+    {name: "爱莲说"},
+    {name: "登幽州台歌"},
+    {name: "望岳"},
+    {name: "登飞来峰"},
+    {name: "游山西村"},
+    {name: "己亥杂诗（其五）"},
+    {name: "竹里馆"},
+    {name: "春夜洛城闻笛"},
+    {name: "逢入京使"},
+    {name: "晚春"},
+    {name: "泊秦淮"},
+    {name: "贾生"},
+    {name: "过松源晨炊漆公店"},
+    {name: "约客"}
+  ],
+  "八年级-上": [
+    {name: "三峡"},
+    {name: "答谢中书书"},
+    {name: "记承天寺夜游"},
+    {name: "与朱元思书"},
+    {name: "野望"},
+    {name: "黄鹤楼"},
+    {name: "使至塞上"},
+    {name: "渡荆门送别"},
+    {name: "钱塘湖春行"},
+    {name: "得道多助，失道寡助"},
+    {name: "富贵不能淫"},
+    {name: "生于忧患，死于安乐"},
+    {name: "愚公移山"},
+    {name: "周亚夫军细柳"},
+    {name: "庭中有奇树"},
+    {name: "龟虽寿"},
+    {name: "赠从弟（其二）"},
+    {name: "梁甫行"},
+    {name: "浣溪沙"},
+    {name: "采桑子"},
+    {name: "相见欢"},
+    {name: "如梦令"}
+  ],
+  "八年级-下": [
+    {name: "桃花源记"},
+    {name: "小石潭记"},
+    {name: "核舟记"},
+    {name: "关雎"},
+    {name: "蒹葭"},
+    {name: "北冥有鱼"},
+    {name: "庄子与惠子游于濠梁之上"},
+    {name: "虽有嘉肴"},
+    {name: "大道之行也"},
+    {name: "马说"},
+    {name: "茅屋为秋风所破歌"},
+    {name: "卖炭翁"},
+    {name: "式微"},
+    {name: "子衿"},
+    {name: "送杜少府之任蜀州"},
+    {name: "望洞庭湖赠张丞相"},
+    {name: "题破山寺后禅院"},
+    {name: "送友人"},
+    {name: "卜算子・黄州定慧院寓居作"},
+    {name: "卜算子・咏梅"}
+  ],
+  "九年级-上": [
+    {name: "沁园春・雪"},
+    {name: "岳阳楼记"},
+    {name: "醉翁亭记"},
+    {name: "湖心亭看雪"},
+    {name: "行路难（其一）"},
+    {name: "酬乐天扬州初逢席上见赠"},
+    {name: "水调歌头"},
+    {name: "鱼我所欲也"},
+    {name: "唐雎不辱使命"},
+    {name: "送东阳马生序"},
+    {name: "渔家傲・秋思"},
+    {name: "江城子・密州出猎"},
+    {name: "破阵子・为陈同甫赋壮词以寄之"},
+    {name: "满江红"},
+    {name: "月夜忆舍弟"},
+    {name: "长沙过贾谊宅"},
+    {name: "左迁至蓝关示侄孙湘"},
+    {name: "商山早行"},
+    {name: "咸阳城东楼"},
+    {name: "无题"},
+    {name: "行香子"},
+    {name: "丑奴儿・书博山道中壁"}
+  ],
+  "九年级-下": [
+    {name: "曹刿论战"},
+    {name: "邹忌讽齐王纳谏"},
+    {name: "陈涉世家"},
+    {name: "出师表"},
+    {name: "十五从军征"},
+    {name: "白雪歌送武判官归京"},
+    {name: "南乡子・登京口北固亭有怀"},
+    {name: "过零丁洋"},
+    {name: "山坡羊・潼关怀古"},
+    {name: "定风波"},
+    {name: "临江仙・夜登小阁，忆洛中旧游"},
+    {name: "太常引・建康中秋夜为吕叔潜赋"},
+    {name: "浣溪沙"},
+    {name: "南安军"},
+    {name: "别云间"},
+    {name: "山坡羊・骊山怀古"},
+    {name: "朝天子・咏喇叭"}
+  ]
+}
+export default {
+  // 页面级组件的数据模型，影响传入数据的覆盖机制：private内定义的属性不允许被覆盖
+  private: {
+    title: "示例页面",
+    time: "00:00",
+    list: []
+  },
+  onInit() {
+    // 直接通过映射获取列表
+    console.log(this.which)
+    this.list = dataMap[this.which] || []
+    const updateTime = () => {
+      const date = new Date()
+      const hour = date.getHours().toString().padStart(2, "0")
+      const minute = date.getMinutes().toString().padStart(2, "0")
+      this.time = hour + ":" + minute
+    }
+    updateTime()
+    this.timer = setInterval(updateTime, 60000)
+  },
+  onDestroy() {
+    clearInterval(this.timer)
+  },
+  navigateToPage(name) {
+    router.push({
+      uri: "/pages/poem",
+      params: {
+        text: name
+      }
+    })
+  },
+  toHomePage(eve) {
+    if (eve.direction === "right") {
+      router.replace({
+        uri: "/pages/index"
+      })
+    }
+  },
+  back() {
+    router.replace({
+      uri: "/pages/index"
+    })
+  }
+}
+</script>
+
+<style>
+.about {
+  position: absolute;
+	left: 210px;
+	top: 36px;
+	width: 80px;
+	height: 80px;
+}
+
+.cover {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 336px;
+  height: 102px;
+  opacity: 1;
+}
+
+.page {
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.name {
+  font-size: 35px;
+  color: white;
+  text-overflow: ellipsis;
+  lines: 1
+}
+.time {
+  left: 77px;
+	top: 7px;
+	width: 182px;
+	height: 48px;
+	opacity: 1;
+	background: rgba(255, 255, 255, 0.6);
+	/** 文本1 */
+	font-size: 34px;
+	font-weight: 600;
+	letter-spacing: 0px;
+	line-height: 33.6px;
+	color: rgba(255, 255, 255, 0.6);
+	text-align: center;
+	vertical-align: top;
+	position: absolute;
+}
+.title {
+  left: 58px;
+	top: 62px;
+	width: 192px;
+	height: 42px;
+	opacity: 1;
+	background: rgba(255, 255, 255, 1);
+	font-size: 30px;
+	font-weight: 500;
+	letter-spacing: 0px;
+	line-height: 44.8px;
+	color: rgba(255, 255, 255, 1);
+	text-align: center;
+	vertical-align: top;
+	position: absolute;
+}
+
+.list {
+  width: 100%;
+  flex: 1;
+}
+
+.center{
+  align-items: center;
+}
+
+.item {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 5px;
+	height: 90px;
+	margin-top: 25px;
+	width: 326px;
+	margin-bottom: 15px;
+	border-radius: 35px;
+	background-color: rgba(38, 38, 38, 1);
+}
+
+.item1 {
+  height: 40px;
+	margin-top: 45px;
+	margin-bottom: 15px;
+	border-radius: 50px;
+}
+
+.back {
+  position: absolute;
+	left: 45px;
+	top: 36px;
+	width: 80px;
+	height: 80px;
+}
+</style>

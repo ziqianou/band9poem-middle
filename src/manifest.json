@@ -1,0 +1,40 @@
+{
+  "package": "com.Dreamqiu.poem.middle.JIFENG",
+  "name": "初中古诗词",
+  "versionName": "1.0.1",
+  "versionCode": 1,
+  "minPlatformVersion": 1000,
+  "icon": "/common/logo.png",
+  "deviceTypeList": [
+    "watch"
+  ],
+  "features": [
+    {
+      "name": "system.router"
+    }
+  ],
+  "config": {
+    "logLevel": "log",
+    "designWidth": 336
+  },
+  "router": {
+    "entry": "pages/index",
+    "pages": {
+      "pages/index": {
+        "component": "index"
+      },
+      "pages/detail": {
+        "component": "detail"
+      },
+      "pages/poem": {
+        "component": "poem"
+      },
+      "pages/about": {
+        "component": "about"
+      },
+      "pages/more": {
+        "component": "more"
+      }
+    }
+  }
+}

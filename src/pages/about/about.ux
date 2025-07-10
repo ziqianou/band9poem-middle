@@ -1,0 +1,310 @@
+<template>
+  <div class="page download-page" @swipe="toHomePage">
+    <div class="header column center">
+      <text class="a">关于</text>
+    </div>
+    <text class="time">{{ time }}</text>
+
+    <image class="icon" src="/common/icon/something.png"></image>
+
+    <text class="people">参与开发的人员</text>
+    <text class="ren">@Dreamqiu</text>
+
+    <text class="people2">二次开发的人员</text>
+    <text class="ren2">@JIFENG</text>
+
+    <text class="people3">设计参考</text>
+    <text class="ren3">@无源流沙</text>
+
+    <!--<image class="back" src="/common/icon/back.png" onclick="back"></image>-->
+     
+    <input
+      class="but"
+      type="button"
+      value="更多信息"
+      style="font-size: 30px; color: #ffffff"
+      onclick="more"
+    />
+  </div>
+</template>
+
+<style>
+.but {
+  left: 70px;
+  margin-top: 300px;
+  width: 190px;
+  height: 65px;
+  opacity: 1;
+  border-radius: 36px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.back {
+  position: absolute;
+	left: 45px;
+	top: 36px;
+	width: 80px;
+	height: 80px;
+}
+
+.download-page {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+text {
+  color: #ffffff;
+}
+
+.column {
+  /* 竖直 */
+  flex-direction: column;
+}
+
+.row {
+  /* 水平 */
+  flex-direction: row;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  margin-top: 56px;
+}
+
+.page {
+  background-color: #000000;
+  width: 336px;
+  height: 480px;
+}
+
+.footer {
+  margin-top: 10px;
+}
+
+.icon {
+  margin-top: 30px;
+  left: 8px;
+  top: 0px;
+  width: 320px;
+  height: 320px;
+  opacity: 1;
+}
+
+.a {
+  font-size: 40px;
+}
+
+.time {
+  left: 77px;
+	top: 7px;
+	width: 182px;
+	height: 48px;
+	opacity: 1;
+	background: rgba(255, 255, 255, 0.6);
+	/** 文本1 */
+	font-size: 34px;
+	font-weight: 600;
+	letter-spacing: 0px;
+	line-height: 33.6px;
+	color: rgba(255, 255, 255, 0.6);
+	text-align: center;
+	vertical-align: top;
+	position: absolute;
+}
+
+.b {
+  font-size: 30px;
+  color: #ffffff;
+  margin-left: 25px;
+}
+
+.c {
+  font-size: 30px;
+  color: #999999;
+  margin-left: 25px;
+}
+
+.d {
+  font-size: 25px;
+  color: #999999;
+}
+
+.e {
+  font-size: 25px;
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+.ren {
+  position: absolute;
+  left: 11px;
+  top: 510px;
+  width: 226px;
+  height: 45px;
+  background: rgba(255, 255, 255, 1);
+  /** 文本1 */
+  font-size: 32px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  text-align: left;
+  vertical-align: top;
+  position: absolute;
+}
+
+.ren2 {
+  position: absolute;
+  left: 11px;
+  top: 600px;
+  width: 226px;
+  height: 45px;
+  background: rgba(255, 255, 255, 1);
+  /** 文本1 */
+  font-size: 32px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  text-align: left;
+  vertical-align: top;
+  position: absolute;
+}
+
+.ren3 {
+  position: absolute;
+  left: 11px;
+  top: 690px;
+  width: 226px;
+  height: 45px;
+  background: rgba(255, 255, 255, 1);
+  /** 文本1 */
+  font-size: 32px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  text-align: left;
+  vertical-align: top;
+  position: absolute;
+}
+
+.people {
+  left: 11px;
+  top: 470px;
+  width: 226px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.6);
+  /** 文本1 */
+  font-size: 32px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: left;
+  vertical-align: top;
+  position: absolute;
+}
+
+.people2 {
+  left: 11px;
+  top: 560px;
+  width: 226px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.6);
+  /** 文本1 */
+  font-size: 32px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: left;
+  vertical-align: top;
+  position: absolute;
+}
+
+.people3 {
+  left: 11px;
+  top: 650px;
+  width: 226px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.6);
+  /** 文本1 */
+  font-size: 32px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: left;
+  vertical-align: top;
+  position: absolute;
+}
+
+.ren1 {
+  left: 11px;
+  top: 417px;
+  width: 226px;
+  height: 45px;
+  background: rgba(255, 255, 255, 1);
+  /** 文本1 */
+  font-size: 32px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  text-align: left;
+  vertical-align: top;
+  position: absolute;
+}
+
+.people1 {
+  left: 11px;
+  top: 371px;
+  width: 224px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.6);
+  /** 文本1 */
+  font-size: 32px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: left;
+  vertical-align: top;
+  position: absolute;
+}
+</style>
+
+<script>
+// 导入模块
+import router from "@system.router"
+
+export default {
+  private: {
+    time: "00:00",
+  },
+
+  onInit() {
+    const updateTime = () => {
+      const date = new Date()
+      const hour = date.getHours().toString().padStart(2, "0")
+      const minute = date.getMinutes().toString().padStart(2, "0")
+      this.time = hour + ":" + minute
+    }
+    updateTime()
+    this.timer = setInterval(updateTime, 60000)
+  },
+  onDestroy() {
+    clearInterval(this.timer)
+  },
+
+  toHomePage(eve) {
+    if (eve.direction === "right") {
+      router.replace({
+        uri: "/pages/index"
+      })
+    }
+  },
+  more() {
+    router.push({
+      uri: "/pages/more"
+    })
+  },
+  back() {
+    router.replace({
+      uri: "/pages/index"
+    })
+  }
+}
+</script>
