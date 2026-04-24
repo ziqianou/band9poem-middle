@@ -78,6 +78,11 @@ const dataMap = {
     {name: "生于忧患，死于安乐"},
     {name: "愚公移山"},
     {name: "周亚夫军细柳"},
+    {name: "饮酒（其五）"},
+    {name: "春望"},
+    {name: "雁门太守行"},
+    {name: "赤壁"},
+    {name: "渔家傲"},
     {name: "庭中有奇树"},
     {name: "龟虽寿"},
     {name: "赠从弟（其二）"},
@@ -151,6 +156,16 @@ const dataMap = {
     {name: "别云间"},
     {name: "山坡羊・骊山怀古"},
     {name: "朝天子・咏喇叭"}
+  ],
+  "现代文": [
+    {name: "春"},
+    {name: "从百草园到三味书屋春"},
+    {name: "纪念白求恩"},
+    {name: "天上的街市"},
+    {name: "假如生活欺骗了你"},
+    {name: "未选择的路"},
+    {name: "白杨礼赞"},
+    {name: "祖国啊，我亲爱的祖国"},
   ]
 }
 export default {
@@ -241,7 +256,7 @@ export default {
 	width: 182px;
 	height: 48px;
 	opacity: 1;
-	background: rgba(255, 255, 255, 0.6);
+	background-color: rgba(255, 255, 255, 0.6);
 	/** 文本1 */
 	font-size: 34px;
 	font-weight: 600;
@@ -258,7 +273,7 @@ export default {
 	width: 192px;
 	height: 42px;
 	opacity: 1;
-	background: rgba(255, 255, 255, 1);
+	background-color: rgba(255, 255, 255, 1);
 	font-size: 30px;
 	font-weight: 500;
 	letter-spacing: 0px;

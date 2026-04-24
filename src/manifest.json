@@ -1,7 +1,7 @@
 {
   "package": "com.Dreamqiu.poem.middle.JIFENG",
   "name": "初中古诗词",
-  "versionName": "1.0.1",
+  "versionName": "1.0.2",
   "versionCode": 1,
   "minPlatformVersion": 1000,
   "icon": "/common/logo.png",
@@ -11,6 +11,9 @@
   "features": [
     {
       "name": "system.router"
+    },
+    {
+      "name": "system.app"
     }
   ],
   "config": {

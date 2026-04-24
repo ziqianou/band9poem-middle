@@ -11,7 +11,7 @@
     <text class="ren">@Dreamqiu</text>
 
     <text class="people2">二次开发的人员</text>
-    <text class="ren2">@JIFENG</text>
+    <text class="ren2">@JIFENG @ziqianou</text>
 
     <text class="people3">设计参考</text>
     <text class="ren3">@无源流沙</text>
@@ -107,7 +107,7 @@ text {
 	width: 182px;
 	height: 48px;
 	opacity: 1;
-	background: rgba(255, 255, 255, 0.6);
+	background-color: rgba(255, 255, 255, 0.6);
 	/** 文本1 */
 	font-size: 34px;
 	font-weight: 600;
@@ -148,7 +148,7 @@ text {
   top: 510px;
   width: 226px;
   height: 45px;
-  background: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 1);
   /** 文本1 */
   font-size: 32px;
   font-weight: 600;
@@ -164,7 +164,7 @@ text {
   top: 600px;
   width: 226px;
   height: 45px;
-  background: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 1);
   /** 文本1 */
   font-size: 32px;
   font-weight: 600;
@@ -180,7 +180,7 @@ text {
   top: 690px;
   width: 226px;
   height: 45px;
-  background: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 1);
   /** 文本1 */
   font-size: 32px;
   font-weight: 600;
@@ -195,7 +195,7 @@ text {
   top: 470px;
   width: 226px;
   height: 42px;
-  background: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
   /** 文本1 */
   font-size: 32px;
   font-weight: 600;
@@ -210,7 +210,7 @@ text {
   top: 560px;
   width: 226px;
   height: 42px;
-  background: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
   /** 文本1 */
   font-size: 32px;
   font-weight: 600;
@@ -225,7 +225,7 @@ text {
   top: 650px;
   width: 226px;
   height: 42px;
-  background: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
   /** 文本1 */
   font-size: 32px;
   font-weight: 600;
@@ -240,7 +240,7 @@ text {
   top: 417px;
   width: 226px;
   height: 45px;
-  background: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 1);
   /** 文本1 */
   font-size: 32px;
   font-weight: 600;
@@ -255,7 +255,7 @@ text {
   top: 371px;
   width: 224px;
   height: 45px;
-  background: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
   /** 文本1 */
   font-size: 32px;
   font-weight: 600;

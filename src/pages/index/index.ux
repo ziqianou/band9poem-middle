@@ -34,7 +34,8 @@ export default {
       {name: "八年级-上"},
       {name: "八年级-下"},
       {name: "九年级-上"},
-      {name: "九年级-下"}
+      {name: "九年级-下"},
+      {name: "现代文"}
     ]
   },
   about() {
@@ -111,7 +112,7 @@ export default {
   width: 182px;
   height: 48px;
   opacity: 1;
-  background: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
   /** 文本1 */
   font-size: 34px;
   font-weight: 600;
@@ -133,7 +134,7 @@ export default {
   width: 182px;
   height: 42px;
   opacity: 1;
-  background: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 1);
   font-size: 40px;
   font-weight: 500;
   letter-spacing: 0px;
